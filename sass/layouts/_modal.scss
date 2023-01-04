@@ -1,0 +1,178 @@
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: var(--backdrop-background);
+    transition-property: opacity, visibility;
+    @include transition ($tdr:350ms, $ttf:linear);
+}
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0) rotate(-360deg);
+    border-radius: 50%;
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1) rotate(0);
+    background-color: var(--primary_white_colour);
+    width: 450px;
+    min-height: 609px;
+    @media screen and (min-width: 1200px) {
+        width: 528px;
+        min-height: 581px;
+    }
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    transition-property: transform, rotate, border-radius;
+    @include transition ($tdr:300ms);
+}
+
+.close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid var(--madal-close-button);
+    border-radius: 50%;
+    justify-content: center;
+    @extend %flex-align;
+    cursor: pointer;
+    &__icon {
+        fill: var(--modal-close-logo);
+        transition-property: fill;
+        @include transition;
+    }
+    &:hover svg,
+    &:focus svg {
+        fill: var(--accent-colour);
+    }
+}
+
+.form__form-title {
+    @include font(700, 20px, 1.15, null);
+    text-align: center;
+    color: var(--primary-title-colour);
+    margin-bottom: 12px;
+}
+
+.label {
+    display: inline-block;
+    @include font(null, 12px, 1.17, 0.01em);
+}
+.modal-label {
+    margin-bottom: 4px;
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 10px;
+}
+.input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--modal-input-border);
+    border-radius: 4px;
+    padding-left: 42px;
+    color: var(--modal-close-logo);
+    cursor: pointer;
+    @include font(null, 16px, 1.88, null);
+    transition-property: border;
+    @include transition;
+    &:hover,
+    &:focus {
+        border: 1px solid var(--accent-colour);
+        outline: transparent;
+    }
+    &__svg {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        fill: var(--primary-title-colour);
+        transition-property: fill;
+        @include transition;
+    }
+    &:hover + svg,
+    &:focus + svg {
+        fill: var(--accent-colour);
+    }
+}
+.input-name {
+    text-transform: capitalize;
+}
+.input__textarea {
+    height: 120px;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    @include font(null, 12px, 1.17, 0.01em);
+    color: var(--modal-close-logo);
+    text-transform: capitalize;
+    resize: none;
+    transition-property: border;
+    @include transition;
+    &::placeholder {
+        @include font(null, 12px, 1.17, 0.01em);
+        color: var(--modal-textarea-placeholder);
+    }
+}
+
+.politic {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.checkbox__label {
+    @extend %flex-align;
+    @include font(null, 12px, 1.16, null);
+    @media screen and (min-width: 1200px) {
+        @include font(null, 14px, 1.71, null);
+    }
+}
+
+.checkbox__label::before {
+    content: "";
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--primary-title-colour);
+    border-radius: 2px;
+    margin-right: 8px;
+    animation-name: checkboxOff;
+    @include checkboxanim;
+}
+
+.checkbox:checked + .checkbox__label::before {
+    animation-name: checkboxOn;
+    @include checkboxanim;
+}
+
+.contract-terms {
+    text-decoration: underline;
+    color: var(--accent-colour);
+    margin-left: 5px;
+    display: inline-block;
+    transition-property: color;
+    @include transition;
+    &:hover,
+    &.focus {
+        color: var(--hero-btn-hover-background);
+    }
+}
+
+.submit-btn {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    @extend %flex-align;
+    padding: 10px 52px;
+    min-width: 200px;
+    margin: 0 auto;
+}

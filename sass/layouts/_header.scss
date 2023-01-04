@@ -1,0 +1,97 @@
+.header {
+    position: relative;
+    border-bottom: 1px solid #ECECEC;
+    &__container {
+        @extend %flex-align;
+    }
+}
+.logo--dark-color {
+    display: inline-block;  
+    margin-right: 93px;
+    padding: 16px 0;
+    @media screen and (min-width: 768px) {
+        padding: 0;
+    }
+}
+
+.navigation {
+    display: none;
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
+}
+.navigation__list {
+    display: flex;
+}
+.navigation__list-item:not(:last-child) {
+    margin-right: 50px;
+}
+.navigation__link {
+    position: relative;
+    @include font(500, 14px, 1.14, 0.02em);  
+    display: inline-block;
+    padding: 32px 0;
+    transition-property: color;
+    @include transition;
+    &:focus,
+    &:hover {
+        color: var(--accent-colour);
+    }
+}
+.connection {
+    margin-left: auto;
+    display: none;
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: column;
+    }
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__item:not(:first-child) {
+        margin-left: 0px;
+        @media screen and (min-width: 1200px) {
+            margin-left: 50px;
+        }
+    }
+    &__svg {
+        display: inline-block;
+        align-self: center;
+        margin-right: 10px;
+        fill: currentColor;
+    }
+}
+.connection__mail {
+    @include font(500, 12px, 1.16, 0.02em);
+        color: var(--primary-text-colour);
+        display: inline-flex;
+        padding: 21px 0 5px 0;
+        @media screen and (min-width: 1200px) {
+            padding: 20px 0;
+            @include font(500, 14px, 1.14, 0.02em);
+        }
+        transition-property: color;
+        @include transition;
+        &:focus,
+        &:hover {
+            color: var(--accent-colour);
+        }
+}
+.connection__tel {
+    @include font(500, 12px, 1.16, 0.02em);
+    color: var(--primary-text-colour);
+    display: inline-flex;
+    padding: 5px 0 21px 0;
+    @media screen and (min-width: 1200px) {
+        padding: 20px 0;
+        @include font(500, 14px, 1.14, 0.02em);
+    }
+    transition-property: color;
+    @include transition;
+    &:focus,
+    &:hover {
+        color: var(--accent-colour);
+    }
+}

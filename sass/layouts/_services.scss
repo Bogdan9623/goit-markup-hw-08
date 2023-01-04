@@ -1,0 +1,33 @@
+.services-section {
+    display: none;
+    @media screen and (min-width: 1200px) {
+        display: block;
+        padding-top: 0;
+    }
+} 
+.image-list {
+    display: flex;
+    & > .list-item {
+        position: relative;
+        flex-basis: calc((100% - 60px) / 3);
+        margin-right: 30px;
+    }
+    & > .list-item:nth-child(3n) {
+        margin-right: 0;
+    }
+    &__overflow {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        min-height: 70px;
+        padding: 24px;
+        background-color: var(--cervices-overflow-text-background);
+    }
+    &__title {
+        @include font(700, 14px, 1.14, null);
+        color: var(--hero-title-colour);
+        text-align: center;
+        text-transform: uppercase;
+    }
+}

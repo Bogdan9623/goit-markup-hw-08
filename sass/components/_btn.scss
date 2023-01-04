@@ -1,0 +1,14 @@
+.btn {
+    font-family: inherit;
+    @include font(700, 16px, 1.88, 0.06em);
+    color: var(--hero-title-colour);
+    background-color: var(--hero-btn-background);
+    border: var(--hero-btn-background);
+    border-radius: 4px;
+    transition-property: background-color;
+    @include transition;
+    &:focus,
+    &:hover {
+        background-color: var(--hero-btn-hover-background);
+    }
+}

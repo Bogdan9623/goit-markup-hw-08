@@ -1,0 +1,29 @@
+.link {
+    text-decoration: none;
+    color: var(--primary-title-colour);
+}
+.list{
+    list-style: none;
+}
+.btn {
+    cursor: pointer;
+}
+body {
+    background-color: var(--primary_white_colour);
+    color: var(--primary-text-colour);
+
+    font-family: var(--main-font);
+    letter-spacing: var(--main-letter-spacing);
+}
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.section__title {
+    text-align: center;
+    margin-bottom: 30px;
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 50px;
+    }
+}

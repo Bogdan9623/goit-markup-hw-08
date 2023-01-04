@@ -1,0 +1,26 @@
+@mixin font($fw, $fs, $lh, $ls) {
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    letter-spacing: $ls;
+}
+
+@mixin transition($tdr:250ms, $ttf:cubic-bezier(0.4, 0, 0.2, 1), $td:null) {
+    transition-duration: $tdr;
+    transition-timing-function: $ttf;
+    transition-delay: $td;
+}
+
+@mixin checkboxanim($ad:250ms, $atf:cubic-bezier(0.4, 0, 0.2, 1), $afm:forwards) {
+    animation-duration: $ad;
+    animation-timing-function: $atf;
+    animation-fill-mode: $afm;
+}
+
+@mixin retina {
+@media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    @content;
+    }
+}
