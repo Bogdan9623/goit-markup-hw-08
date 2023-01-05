@@ -24,6 +24,9 @@
     background-color: var(--primary_white_colour);
     width: 450px;
     min-height: 609px;
+    @media screen and (max-width: 480px) {
+        width: 95%;
+    }
     @media screen and (min-width: 1200px) {
         width: 528px;
         min-height: 581px;
@@ -134,6 +137,8 @@
 
 .checkbox__label {
     @extend %flex-align;
+    flex-wrap: wrap;
+    gap: 5px;
     @include font(null, 12px, 1.16, null);
     @media screen and (min-width: 1200px) {
         @include font(null, 14px, 1.71, null);
@@ -159,7 +164,7 @@
 .contract-terms {
     text-decoration: underline;
     color: var(--accent-colour);
-    margin-left: 5px;
+    // margin-left: 5px;
     display: inline-block;
     transition-property: color;
     @include transition;
